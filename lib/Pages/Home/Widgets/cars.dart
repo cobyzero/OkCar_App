@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:okcar_app/Common/colors.dart';
 import 'package:okcar_app/Common/widgets.dart';
 
-class CarsHome extends StatelessWidget {
+class CarsHome extends StatefulWidget {
   const CarsHome({super.key});
 
+  @override
+  State<CarsHome> createState() => _CarsHomeState();
+}
+
+class _CarsHomeState extends State<CarsHome> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -40,16 +45,21 @@ class CarsHome extends StatelessWidget {
     );
   }
 
-  Container botonDetails() {
-    return Container(
-      padding: const EdgeInsets.only(top: 15, bottom: 15, left: 50, right: 50),
-      decoration: BoxDecoration(
-          color: MyColors.blueGeneral(),
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
-      child: const Text(
-        "Details",
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+  botonDetails() {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, "/Details");
+      },
+      child: Container(
+        padding: const EdgeInsets.only(top: 15, bottom: 15, left: 50, right: 50),
+        decoration: BoxDecoration(
+            color: MyColors.blueGeneral(),
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
+        child: const Text(
+          "Details",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

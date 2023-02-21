@@ -12,4 +12,8 @@ class MyColors {
   static Color graySuave() {
     return const Color.fromARGB(213, 236, 236, 234);
   }
+
+  static Color blackSuave() {
+    return const Color(0xff1D1F20);
+  }
 }

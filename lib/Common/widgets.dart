@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Common {
-  static space(double num) {
+  static space(double num, {double w = 0}) {
     return SizedBox(
       height: num,
+      width: w,
     );
   }
 
